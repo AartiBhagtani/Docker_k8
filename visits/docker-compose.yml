@@ -1,0 +1,13 @@
+# docker compose version
+version: '3'
+
+# types of container requires ~ service
+services: 
+  redis-server: 
+    image: 'redis'
+  node-app: 
+    restart: on-failure
+    build: .
+    ports: 
+      - "5000:8080"
+

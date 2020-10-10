@@ -5,6 +5,6 @@ services:
   - docker
 # before deploying/run tests
 before_install: 
-  - docker build -t aartibhagtani/docker_image -f Dockerfile.dev ./frontend
+  - docker build -t aartibhagtani/docker_image -f ./frontend/Dockerfile.dev ./frontend
 script:
   - docker run -e CI=true aartibhagtani/docker_image npm run test

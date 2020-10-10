@@ -1,0 +1,10 @@
+# super level permission required
+sudo: required
+language: generic 
+services: 
+  - docker
+# before deploying/run tests
+before_install: 
+  - docker build -t aartibhagtani/docker_image -f Dockerfile.dev .
+script:
+  - docker run -e CI=true aartibhagtani/docker_image npm run test
